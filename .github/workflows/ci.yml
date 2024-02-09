@@ -1,0 +1,42 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 'latest'
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Linting Code
+        run: npm run lint
+
+      - name: Testing Application
+        run: npm test
+
+      - name: Build Application
+        run: npm run build
+
+      - name: Notify
+        if: always()
+        run: echo "CI workflow completed"
+
+      - name: Trigger CD Workflow
+        if: success()
+        run: gh workflow run cd.yml
