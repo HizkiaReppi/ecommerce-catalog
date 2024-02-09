@@ -1,9 +1,9 @@
 <script setup>
-import Greetings from './components/Greetings.vue'
+import ProductCard from '@/components/ProductCard.vue'
 </script>
 
 <template>
   <main>
-    <Greetings msg="You did it!" />
+    <ProductCard />
   </main>
 </template>
