@@ -40,3 +40,5 @@ jobs:
       - name: Trigger CD Workflow
         if: success()
         run: gh workflow run cd.yml
+        env:
+          GH_TOKEN: ${{ secrets.TOKEN_GITHUB }}
