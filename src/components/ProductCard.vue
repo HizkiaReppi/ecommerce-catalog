@@ -1,7 +1,8 @@
-<!-- eslint-disable prettier/prettier -->
 <template>
   <div class="product-page">
+    <skeleton-product-card v-if="isLoading" />
     <div
+      v-else
       class="container-page"
       :class="
         !isProductAvailable ? 'bg-page-gray' : this.isMen ? 'bg-page-blue' : 'bg-page-magenta'
@@ -18,13 +19,17 @@
           </div>
           <div class="product-content" :class="isMen ? 'scrollbar-mens' : 'scrollbar-womens'">
             <product-details
-            :title="product.title"
-            :category="product.category"
-            :description="product.description"
-            :rating="product.rating.rate"
-            :isMen="this.isMen"
+              :title="product.title"
+              :category="product.category"
+              :description="product.description"
+              :rating="product.rating.rate"
+              :isMen="this.isMen"
             />
-            <product-checkout :price="product.price" :isMen="this.isMen" @next-product="getNextProduct" />
+            <product-checkout
+              :price="product.price"
+              :isMen="this.isMen"
+              @next-product="getNextProduct"
+            />
           </div>
         </div>
       </div>
@@ -38,6 +43,7 @@ import ProductImage from './ProductImage.vue'
 import ProductDetails from './ProductDetails.vue'
 import ProductCheckout from './ProductCheckout.vue'
 import ProductUnavailable from './ProductUnavailable.vue'
+import SkeletonProductCard from './SkeletonProductCard.vue'
 
 export default {
   name: 'ProductCard',
@@ -45,7 +51,8 @@ export default {
     ProductImage,
     ProductDetails,
     ProductCheckout,
-    ProductUnavailable
+    ProductUnavailable,
+    SkeletonProductCard
   },
   data() {
     return {
