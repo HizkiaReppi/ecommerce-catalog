@@ -1,7 +1,8 @@
-import ProductCard from '@/components/ProductCard.vue'
+import { vitest, beforeEach, afterEach, describe, it, expect } from 'vitest'
 import { mount } from '@vue/test-utils'
 import axios from '@/libs/axios'
-import { vitest, beforeEach, afterEach, describe, it, expect } from 'vitest'
+import ProductCard from '@/components/ProductCard.vue'
+import SkeletonProductCard from '@/components/SkeletonProductCard.vue'
 
 // Mock axios module
 vitest.mock('@/libs/axios')
@@ -129,5 +130,27 @@ describe('ProductCard', () => {
 
     const img = wrapper.find('.product-image img')
     expect(img.attributes('src')).toBe('updated-image.jpg')
+  })
+
+  it('SkeletonProductCard', async () => {
+    // Mount the component with isLoading set to true
+    const wrapper = mount(ProductCard, {
+      data() {
+        return {
+          isLoading: true
+        }
+      }
+    })
+
+    // Check if SkeletonProductCard is displayed when isLoading is true
+    const skeletonCard = wrapper.findComponent(SkeletonProductCard)
+    expect(skeletonCard.exists()).toBe(true)
+
+    // Check if product data is not displayed when isLoading is false
+    wrapper.setData({ isLoading: false })
+    await wrapper.vm.$nextTick()
+
+    const productCard = wrapper.find('.container-page')
+    expect(productCard.exists()).toBe(true)
   })
 })
