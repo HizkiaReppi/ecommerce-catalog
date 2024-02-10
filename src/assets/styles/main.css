@@ -261,7 +261,7 @@ hr {
 }
 
 /* Media Query Tablet */
-@media screen and (max-width: 834px) {
+@media screen and (max-width: 768px) {
   .product-card {
     min-width: 400px;
     max-width: 768px;

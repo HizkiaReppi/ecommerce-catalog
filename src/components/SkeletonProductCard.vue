@@ -86,4 +86,52 @@ export default {
     opacity: 0.4;
   }
 }
+
+/* Media Query Tablet */
+@media screen and (max-width: 768px) {
+  .container {
+    padding: 0 3em;
+    width: auto;
+  }
+  .skeleton-card {
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+    padding: 20px;
+    margin: 20px;
+  }
+  .skeleton-image {
+    width: 200px;
+    height: 200px;
+    margin-bottom: 10px;
+  }
+  .skeleton-title {
+    height: 50px;
+    margin-bottom: 10px;
+  }
+  .skeleton-detail {
+    height: 200px;
+  }
+}
+
+/* Media Query Mobile */
+@media screen and (max-width: 480px) {
+  .skeleton-card {
+    height: auto;
+    padding: 20px;
+    margin: 10px;
+  }
+  .skeleton-image {
+    width: 100px;
+    height: 100px;
+    margin-right: 10px;
+  }
+  .skeleton-title {
+    height: 60px;
+    margin-bottom: 10px;
+  }
+  .skeleton-detail {
+    height: 200px;
+  }
+}
 </style>
