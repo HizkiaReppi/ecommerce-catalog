@@ -320,6 +320,16 @@ hr {
   .product-checkout .product-button .btn-buy{
     margin-right: 0;
   }
+  .product-unavailable-container {
+    width: 100vw;
+    height: 300px;
+  }
+  .product-unavailable-container .bg-unavailable {
+    left: 10%;
+  }
+  .product-unavailable-container .detail-product p {
+    font-size: 1em;
+  }
 }
 
 /* Media Query Mobile */
@@ -361,5 +371,23 @@ hr {
   }
   .product-checkout .product-button button {
     font-size: 0.7em;
+  }
+  .product-unavailable-container {
+    width: 100vw;
+    height: 300px;
+  }
+  .product-unavailable-container .bg-unavailable {
+    left: 10%;
+    top: 30%;
+  }
+  .product-unavailable-container .detail-product p {
+    font-size: 0.9em;
+  }
+  .product-unavailable-container .detail-product .buttons {
+    margin-top: 10px;
+  }
+  .product-unavailable-container .detail-product button {
+    font-size: 0.85em;
+    padding: 6px 70px;
   }
 }
