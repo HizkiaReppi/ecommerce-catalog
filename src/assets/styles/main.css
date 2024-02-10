@@ -259,3 +259,107 @@ hr {
   border: 1px solid var(--soft-gray);
   margin-bottom: 10px;
 }
+
+/* Media Query Tablet */
+@media screen and (max-width: 834px) {
+  .product-card {
+    min-width: 400px;
+    max-width: 768px;
+    height: auto;
+    padding: 2em 3em;
+    margin: 0 3em;
+  }
+  .product-available-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .product-available-container .product-image {
+    width: 150px;
+    margin: 0;
+  }
+  .product-available-container .product-content {
+    padding: 0;
+    margin-top: 15px;
+  }
+  .product-content .product-title {
+    font-size: 1.3em;
+    font-weight: 600;
+  }
+  .product-content .product-label p {
+    font-size: 0.8rem;
+  }
+  .product-content .product-label .product-rate {
+    gap: 5px;
+  }
+  .product-content .product-label .product-rate p {
+    font-size: 0.8rem;
+  }
+  .product-content .product-label .product-rate .circles-rate {
+    margin-left: 0;
+  }
+  .product-content .product-label .product-rate .circle {
+    width: 10px;
+    height: 10px;
+  }
+  .product-description {
+    font-size: 1em;
+    max-height: 100px;
+  }
+  .product-checkout .product-price {
+    font-size: 1.3em;
+  }
+  .product-checkout .product-button {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .product-checkout .product-button button {
+    flex-grow: 1;
+  }
+  .product-checkout .product-button .btn-buy{
+    margin-right: 0;
+  }
+}
+
+/* Media Query Mobile */
+@media screen and (max-width: 480px) {
+  .product-card {
+    min-width: 300px;
+    max-width: 425px;
+    height: auto;
+    padding: 2em 1.5em;
+    margin: 0 1.5em;
+  }
+  .product-available-container .product-image {
+    width: 100px;
+  }
+  .product-content .product-title {
+    font-size: 1em;
+    font-weight: 700;
+  }
+  .product-content .product-label p {
+    font-size: 0.7rem;
+  }
+  .product-content .product-label .product-rate p {
+    font-size: 0.7rem;
+  }
+  .product-content .product-label .product-rate .circles-rate {
+    margin-left: 0;
+  }
+  .product-content .product-label .product-rate .circle {
+    width: 8px;
+    height: 8px;
+  }
+  .product-description {
+    font-size: 0.85em;
+    max-height: 100px;
+    margin-top: 0;
+  }
+  .product-checkout .product-price {
+    font-size: 0.9em;
+  }
+  .product-checkout .product-button button {
+    font-size: 0.7em;
+  }
+}
